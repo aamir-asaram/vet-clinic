@@ -141,4 +141,5 @@ JOIN species ON animals.species_id = species.id
 JOIN vets ON vet_id = vets.id
 WHERE vets.name = 'Maisy Smith'
 GROUP BY species.name
-ORDER BY COUNT(species.id) DESC;
+ORDER BY COUNT(species.id) DESC
+LIMIT 1;

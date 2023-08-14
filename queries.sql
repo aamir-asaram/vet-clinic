@@ -14,6 +14,7 @@ UPDATE animals
 SET species = 'unspecified';
 SELECT * FROM animals;
 ROLLBACK;
+SELECT * FROM animals;
 
 BEGIN;
 UPDATE animals
@@ -33,7 +34,7 @@ SELECT * FROM animals;
 
 BEGIN;
 DELETE FROM animals
-WHERE date_of_birth < '2022-01-01';
+WHERE date_of_birth > '2022-01-01';
 SAVEPOINT deleted_record;
 UPDATE animals
 SET weight_kg = weight_kg * -1;
@@ -50,7 +51,7 @@ SELECT neutered, AVG(escape_attempts) FROM animals GROUP BY neutered;
 SELECT species, MAX(weight_kg), MIN(weight_kg) FROM animals GROUP BY species;
 
 SELECT species, AVG(escape_attempts) FROM animals
-WHERE date_of_birth BETWEEN '1990-01-01' AND '1999-12-31'
+WHERE date_of_birth BETWEEN '1990-01-01' AND '2000-12-31'
 GROUP BY species;
 
 -- Query Multiple Tables

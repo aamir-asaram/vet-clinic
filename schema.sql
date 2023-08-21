@@ -42,3 +42,12 @@ ALTER TABLE animals
 ADD CONSTRAINT fk_owner
 FOREIGN KEY (owner_id)
 REFERENCES owners(id);
+
+
+
+
+CREATE INDEX index_animal_id ON visits(animal_id);
+
+CREATE INDEX index_vet_id ON visits(vet_id);
+
+CREATE INDEX index_email_owners ON owners(id);
